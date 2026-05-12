@@ -14,7 +14,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full h-[800px] overflow-hidden">
+    <section className="relative w-full h-[800px] overflow-hidden pt-[30px]">
       {/* Hidden global SVG for defining icon gradients referenced by ID */}
       <svg style={{ position: 'absolute', width: 0, height: 0 }}>
         <defs>
@@ -27,19 +27,19 @@ export const Hero: React.FC = () => {
 
       {/* Decorative Background Blurs */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-brand-blue/10 to-transparent rounded-full blur-[120px] -z-10"></div>
-      
+
       {/* Rigid Edge-to-Edge Fluid container with Zero Autospacing gutters */}
       <div className="w-full max-w-[1440px] mx-auto h-full relative">
-        
+
         {/* Left Content Column: Absolute Figma Positioning */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           className="absolute top-[134px] left-[92px] w-[600px] h-[600px]"
         >
           {/* Status Badge: Precise Figma Implementation */}
-          <div 
+          <div
             className="absolute top-0 left-0 flex items-center justify-center gap-2.5 bg-white/[0.03] border border-white/10 rounded-full backdrop-blur-[4px] select-none"
             style={{ width: '322px', height: '31px' }}
           >
@@ -50,7 +50,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Main Headline: Rigid Figma Layout & Typography */}
-          <h1 
+          <h1
             className="absolute top-[27px] left-0 flex flex-col justify-center text-white select-none"
             style={{
               width: '505px',
@@ -58,7 +58,7 @@ export const Hero: React.FC = () => {
             }}
           >
             <span className="font-medium text-[32px] leading-[50px] tracking-[-1.44px]">Become an</span>
-            <span 
+            <span
               className="font-semibold text-[42px] leading-[50px] tracking-[-1.44px] bg-gradient-to-r from-[#0070F3] via-[#5E00FF] to-[#9333EA] bg-clip-text text-transparent pb-2"
             >
               AI- powered Data Analyst
@@ -66,7 +66,7 @@ export const Hero: React.FC = () => {
           </h1>
 
           {/* Description text: Precise Figma Positioning & Typography */}
-          <p 
+          <p
             className="absolute top-[219.5px] left-0 flex flex-col justify-center text-white/65 font-dm font-normal select-none"
             style={{
               width: '542.7px',
@@ -80,7 +80,7 @@ export const Hero: React.FC = () => {
           </p>
 
           {/* Feature Micro-Chips: Precise Figma Layout Box */}
-          <div 
+          <div
             className="absolute top-[355px] left-0 flex flex-row flex-wrap content-start gap-[10px]"
             style={{
               width: '322px',
@@ -93,7 +93,7 @@ export const Hero: React.FC = () => {
               { icon: <Calendar />, text: "Live cohort learning", width: '154.39px' },
               { icon: <Briefcase />, text: "Real-world projects", width: '154.16px' },
             ].map((feat, i) => (
-              <motion.div 
+              <motion.div
                 custom={i}
                 variants={badgeVariants}
                 initial="hidden"
@@ -103,7 +103,7 @@ export const Hero: React.FC = () => {
                 style={{ width: feat.width }}
               >
                 <div className="absolute left-[13px] top-[calc(50%-6.5px)] w-[13px] h-[13px] flex items-center justify-center">
-                  {React.cloneElement(feat.icon as React.ReactElement, {
+                  {React.cloneElement(feat.icon as React.ReactElement<any>, {
                     style: { stroke: 'url(#iconGradient)', width: '13px', height: '13px' }
                   })}
                 </div>
@@ -116,7 +116,7 @@ export const Hero: React.FC = () => {
 
           {/* Action Buttons: Adjusted absolute position to match frame layout */}
           <div className="absolute top-[453.5px] left-0 flex items-center gap-[12px]">
-            <button 
+            <button
               className="relative flex items-center justify-center gap-3 text-white font-dm transition-all duration-300 hover:scale-[1.02] select-none active:scale-[0.98]"
               style={{
                 width: '294.84px',
@@ -132,7 +132,7 @@ export const Hero: React.FC = () => {
               <ArrowRight className="w-[18px] h-[18px] flex-shrink-0" />
             </button>
 
-            <button 
+            <button
               className="bg-white/[0.03] border border-white/10 backdrop-blur-[4px] rounded-full transition-all duration-300 hover:bg-white/[0.06] hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center select-none"
               style={{
                 width: '206.02px',
@@ -157,7 +157,7 @@ export const Hero: React.FC = () => {
             <DashboardIllustration />
 
             {/* Floating Stat Badge Top (Precise Figma Build derived relative to dashboard) */}
-            <motion.div 
+            <motion.div
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1.5 }}
@@ -174,7 +174,7 @@ export const Hero: React.FC = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22C55E] opacity-40"></span>
                   <div className="relative w-3 h-3 rounded-full bg-[#22C55E] shadow-[0_0_8px_#22C55E]"></div>
                 </div>
-                
+
                 <div className="flex flex-col justify-center leading-tight">
                   <span className="text-[13px] font-bold text-white tracking-tight">12 hires this week</span>
                   <span className="text-[11px] text-[#8A93A6] font-medium">live placement feed</span>
@@ -183,7 +183,7 @@ export const Hero: React.FC = () => {
             </motion.div>
 
             {/* Floating Stat Badge Bottom: Recalculated precise Figma Corner placement */}
-            <motion.div 
+            <motion.div
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1.8 }}
@@ -196,7 +196,7 @@ export const Hero: React.FC = () => {
               }}
             >
               {/* Inner gradient icon circle */}
-              <div 
+              <div
                 className="absolute w-[36px] h-[36px] left-[17px] top-[calc(50%-18px)] rounded-full flex items-center justify-center shadow-[0_0_12px_-2px_rgba(0,112,243,0.5)]"
                 style={{ background: 'linear-gradient(135deg, #0070F3 0%, #7000FF 100%)' }}
               >

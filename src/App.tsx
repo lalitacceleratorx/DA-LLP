@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ComparisonSection } from './components/ComparisonSection';
@@ -25,11 +24,11 @@ const logos = [
 const MarqueeContent = () => (
   <div className="marquee-content">
     {logos.map((logo, i) => (
-      <span 
-        key={i} 
+      <span
+        key={i}
         className="marquee-logo"
-        style={{ 
-          width: `${logo.width}px`, 
+        style={{
+          width: `${logo.width}px`,
           fontSize: `${logo.fontSize}px`
         }}
       >
@@ -43,7 +42,7 @@ const CompanyLogos = () => (
   <section className="max-w-[1216px] mx-auto border-t border-white/5 relative mt-[80px] pt-0" style={{ height: '369px' }}>
     {/* Heading Container */}
     <div className="w-full flex justify-center relative">
-      <h2 
+      <h2
         className="flex items-center justify-center text-center font-normal text-[32px] leading-[40px] tracking-[-0.72px] text-white font-sans"
         style={{
           maxWidth: '648px',
@@ -53,7 +52,7 @@ const CompanyLogos = () => (
         Learners from fast-growing companies are upskilling with AcceleratorX
       </h2>
       {/* Gradient line divider */}
-      <div 
+      <div
         style={{
           position: 'absolute',
           width: '615px',
@@ -75,14 +74,14 @@ const CompanyLogos = () => (
         <MarqueeContent />
       </div>
     </div>
-    
+
     {/* Stats Container - starts 227px from top (131+32=163, 227-163=64px gap) */}
-    <div 
+    <div
       className="grid grid-cols-2 md:grid-cols-4 border border-white/10 rounded-[16px] bg-[#01030B] overflow-hidden mt-[64px] min-h-[142px]"
     >
       {/* Stat 1: Learners trained */}
       <div className="flex flex-col justify-center items-center text-center py-6 md:py-0 h-full border-white/15 border-b md:border-b-0 border-r relative">
-        <div 
+        <div
           className="text-[46.3px] font-normal leading-[48px] tracking-[-0.96px]"
           style={{
             fontFamily: "'Inter', sans-serif",
@@ -101,7 +100,7 @@ const CompanyLogos = () => (
 
       {/* Stat 2: Projects completed */}
       <div className="flex flex-col justify-center items-center text-center py-6 md:py-0 h-full border-white/15 border-b md:border-b-0 md:border-r relative">
-        <div 
+        <div
           className="text-[48px] font-normal leading-[48px] tracking-[-0.96px]"
           style={{
             fontFamily: "'Inter', sans-serif",
@@ -120,7 +119,7 @@ const CompanyLogos = () => (
 
       {/* Stat 3: Industry mentors */}
       <div className="flex flex-col justify-center items-center text-center py-6 md:py-0 h-full border-white/15 border-r relative">
-        <div 
+        <div
           className="text-[45.2px] font-normal leading-[48px] tracking-[-0.96px]"
           style={{
             fontFamily: "'Inter', sans-serif",
@@ -139,7 +138,7 @@ const CompanyLogos = () => (
 
       {/* Stat 4: AI tools covered */}
       <div className="flex flex-col justify-center items-center text-center py-6 md:py-0 h-full relative">
-        <div 
+        <div
           className="text-[47.3px] font-normal leading-[48px] tracking-[-0.96px]"
           style={{
             fontFamily: "'Inter', sans-serif",
@@ -166,7 +165,7 @@ function App() {
       <main>
         {/* Top Fold */}
         <Hero />
-        
+
         {/* Social Proof & Stats */}
         <CompanyLogos />
 

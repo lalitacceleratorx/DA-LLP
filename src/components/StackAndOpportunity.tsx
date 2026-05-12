@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, TrendingUp } from 'lucide-react';
+import { TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const StackIcon = () => (
@@ -323,9 +323,9 @@ export const StackAndOpportunity: React.FC = () => {
         </div>
 
         {/* Right Column (AI PM Graph) */}
-        <img 
-          src="/AI PM Graph.png" 
-          alt="AI PM Graph" 
+        <img
+          src="/AI PM Graph.png"
+          alt="AI PM Graph"
           className="absolute left-[608px] top-[115.59px] rounded-[12px] object-cover"
           style={{
             width: '631px',

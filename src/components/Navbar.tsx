@@ -2,296 +2,78 @@ import React from 'react';
 
 export const Navbar: React.FC = () => {
   return (
-    <nav style={{
-      boxSizing: 'border-box',
-      position: 'sticky',
-      width: '100%',
-      height: '80px',
-      left: '0px',
-      top: '0px',
-      borderBottom: '1px solid #1D1D1D',
-      background: '#0E0E0E',
-      zIndex: 50,
-      display: 'flex',
-      justifyContent: 'center',
-      overflow: 'hidden'
-    }}>
-      <div style={{
-        position: 'relative',
-        width: '1440px',
-        maxWidth: '100%',
-        height: '80px'
-      }}>
-        {/* Rectangle 2 */}
-        <div style={{
-          position: 'absolute',
-          width: '1300px',
-          height: '60px',
-          left: 'calc(50% - 1300px/2)',
-          top: '10px',
-          background: '#0A0A0A',
-          backdropFilter: 'blur(5px)',
-          WebkitBackdropFilter: 'blur(5px)',
-          borderRadius: '100px'
-        }} />
-
-        {/* Group 3 */}
-        <div style={{
-          position: 'absolute',
-          width: '128px',
-          height: '19px',
-          left: '90px',
-          top: '30px'
-        }}>
-          <img
-            src="/logo.png"
-            alt="AcceleratorX Logo"
-            style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-          />
-        </div>
-
-        {/* Group 5 */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          padding: '0px',
-          gap: '56px',
-          position: 'absolute',
-          width: '478px',
-          height: '20px',
-          left: '645px',
-          top: '30px'
-        }}>
-          {/* Frame 51298 (Home) */}
-          <div style={{
-            boxSizing: 'border-box',
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '0px',
-            gap: '10px',
-            width: '39px',
-            height: '20px',
-            borderBottom: '1px solid #3E38E0'
-          }}>
-            <div style={{
-              width: '39px',
-              height: '20px',
-              fontFamily: "'Inter', sans-serif",
-              fontStyle: 'normal',
-              fontWeight: 500,
-              fontSize: '14px',
-              lineHeight: '20px',
-              display: 'flex',
-              alignItems: 'center',
-              letterSpacing: '-0.36px',
-              color: '#DFDFDF'
-            }}>Home</div>
+    <nav className="fixed top-[10px] w-[calc(100%-1rem)] sm:w-full left-1/2 -translate-x-1/2 z-[9999] max-w-7xl transition-all duration-300 ease-in-out transform">
+      <div className="h-[56px] sm:h-[60px] rounded-[100px] backdrop-blur-[10px] bg-white/70 dark:bg-[#000000]/70 shadow-lg px-4 sm:px-6 md:px-8 w-full">
+        <div className="flex items-center justify-between h-full">
+          <div className="relative group transition-all duration-200 ease-in-out">
+            <a className="flex items-center space-x-2 hover:opacity-90" href="/">
+              <img src="/logo.png" alt="AcceleratorX company new logo - best product management courses" className="w-auto h-5 md:h-8 object-contain" draggable="false" />
+            </a>
           </div>
-          
-          {/* Programs */}
-          <div style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            gap: '5px',
-            height: '20px'
-          }}>
-            <div style={{
-              fontFamily: "'Inter', sans-serif",
-              fontStyle: 'normal',
-              fontWeight: 500,
-              fontSize: '14px',
-              lineHeight: '20px',
-              display: 'flex',
-              alignItems: 'center',
-              letterSpacing: '-0.36px',
-              color: '#DFDFDF',
-              height: '20px'
-            }}>Programs</div>
-            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1L5 5L9 1" stroke="#DFDFDF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
-
-          {/* About */}
-          <div style={{
-            width: '40px',
-            height: '20px',
-            fontFamily: "'Inter', sans-serif",
-            fontStyle: 'normal',
-            fontWeight: 500,
-            fontSize: '14px',
-            lineHeight: '20px',
-            display: 'flex',
-            alignItems: 'center',
-            letterSpacing: '-0.36px',
-            color: '#DFDFDF'
-          }}>About</div>
-
-          {/* Blog */}
-          <div style={{
-            width: '29px',
-            height: '20px',
-            fontFamily: "'Inter', sans-serif",
-            fontStyle: 'normal',
-            fontWeight: 500,
-            fontSize: '14px',
-            lineHeight: '20px',
-            display: 'flex',
-            alignItems: 'center',
-            letterSpacing: '-0.36px',
-            color: '#DFDFDF'
-          }}>Blog</div>
-
-          {/* Job Portal */}
-          <div style={{
-            width: '66px',
-            height: '20px',
-            fontFamily: "'Inter', sans-serif",
-            fontStyle: 'normal',
-            fontWeight: 500,
-            fontSize: '14px',
-            lineHeight: '20px',
-            display: 'flex',
-            alignItems: 'center',
-            letterSpacing: '-0.36px',
-            color: '#DFDFDF'
-          }}>Job Portal</div>
-        </div>
-
-        {/* Group 4 */}
-        <div style={{
-          position: 'absolute',
-          width: '166px',
-          height: '28px',
-          left: '1193px',
-          top: '26px'
-        }}>
-          {/* Link -> Log In */}
-          <div style={{
-            position: 'absolute',
-            width: '40px',
-            height: '20px',
-            left: '0px',
-            top: 'calc(50% - 20px/2)',
-            fontFamily: "'Inter', sans-serif",
-            fontStyle: 'normal',
-            fontWeight: 500,
-            fontSize: '14px',
-            lineHeight: '20px',
-            display: 'flex',
-            alignItems: 'center',
-            letterSpacing: '-0.36px',
-            color: '#DFDFDF'
-          }}>
-            Log In
-          </div>
-
-          {/* Link */}
-          <div style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            padding: '0px 0px 0px 12px',
-            position: 'absolute',
-            width: '110px',
-            height: '28px',
-            left: '56px',
-            top: 'calc(50% - 28px/2)',
-            borderRadius: '33554400px'
-          }}>
-            {/* Frame 51296 */}
-            <div style={{
-              boxSizing: 'border-box',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              padding: '2px 4px',
-              gap: '10px',
-              width: '71px',
-              height: '28px',
-              border: '1px solid #3E38E0',
-              borderRadius: '20px',
-              flex: 'none',
-              order: 0,
-              flexGrow: 0,
-              margin: '0px -1px',
-              zIndex: 2
-            }}>
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: '0px 6px',
-                width: '63px',
-                height: '20px',
-                flex: 'none',
-                order: 0,
-                alignSelf: 'stretch',
-                flexGrow: 0
-              }}>
-                <div style={{
-                  width: '51px',
-                  height: '20px',
-                  fontFamily: "'Inter', sans-serif",
-                  fontStyle: 'normal',
-                  fontWeight: 500,
-                  fontSize: '14px',
-                  lineHeight: '20px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  letterSpacing: '-0.36px',
-                  color: '#DFDFDF',
-                  flex: 'none',
-                  order: 0,
-                  flexGrow: 0
-                }}>
-                  Sign Up
+          <div className="hidden min-[960px]:flex items-center space-x-4 xl:space-x-6">
+            <div className="relative group">
+              <button className="font-sans flex items-center gap-1 text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:group-hover:text-white text-[14px] font-medium py-2 transition-all duration-200 ease-in-out">
+                Programs
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-down transition-all duration-300 ease-in-out group-hover:rotate-180" style={{ transform: 'rotate(0deg)' }}>
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </button>
+              <div className="absolute left-0 top-full pt-2 w-64 transition-all duration-300 ease-in-out opacity-0 invisible -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+                <div className="dark:bg-black/95 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-xl shadow-xl overflow-hidden bg-white/95">
+                  <a className="font-sans block px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/50 dark:hover:bg-gray-700/50 transition-all duration-200 ease-in-out text-xs font-medium" href="/courses/product-management">AI Product Management</a>
+                  <a className="font-sans block px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/50 dark:hover:bg-gray-700/50 transition-all duration-200 ease-in-out text-xs font-medium" href="/courses/ai-digital-marketing">AI Digital Marketing</a>
+                  <a className="font-sans block px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/50 dark:hover:bg-gray-700/50 transition-all duration-200 ease-in-out text-xs font-medium" href="/courses/data-analytics">AI Data Analytics</a>
+                  <a className="font-sans block px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/50 dark:hover:bg-gray-700/50 transition-all duration-200 ease-in-out text-xs font-medium" href="/courses/data-science">AI Data Science</a>
+                  <a className="font-sans block px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/50 dark:hover:bg-gray-700/50 transition-all duration-200 ease-in-out text-xs font-medium" href="/courses/generative-ai">Generative AI</a>
+                  <a className="font-sans block px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/50 dark:hover:bg-gray-700/50 transition-all duration-200 ease-in-out text-xs font-medium" href="/courses/advance-generative-ai">Advance Gen AI</a>
                 </div>
               </div>
             </div>
-
-            {/* Background */}
-            <div style={{
-              boxSizing: 'border-box',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'flex-start',
-              padding: '6px',
-              width: '28px',
-              height: '28px',
-              border: '1px solid #3E38E0',
-              borderRadius: '33554400px',
-              flex: 'none',
-              order: 1,
-              flexGrow: 0,
-              zIndex: 1
-            }}>
-              <div style={{
-                width: '16px',
-                height: '16px',
-                flex: 'none',
-                order: 0,
-                alignSelf: 'stretch',
-                flexGrow: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4.08337 9.91667L9.91671 4.08333M9.91671 4.08333H4.08337M9.91671 4.08333V9.91667" stroke="white" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round"/>
+            <a className="font-sans relative group transition-all duration-200 ease-in-out text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white py-2 text-[14px] font-medium" href="/about-us">
+              About
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 dark:bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
+            </a>
+            <a className="font-sans relative group transition-all duration-200 ease-in-out text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white py-2 text-[14px] font-medium" href="/blogs">
+              Blog
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 dark:bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
+            </a>
+            <a className="font-sans relative group transition-all duration-200 ease-in-out text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white py-2 text-[14px] font-medium" href="/jobs">
+              Jobs Portal
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 dark:bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
+            </a>
+            <div className="relative group">
+              <button className="font-sans flex items-center gap-1 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white text-[14px] font-medium py-2 transition-all duration-200 ease-in-out">
+                Our Platforms
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-down transition-all duration-300 ease-in-out group-hover:rotate-180" style={{ transform: 'rotate(0deg)' }}>
+                  <path d="m6 9 6 6 6-6"></path>
                 </svg>
+              </button>
+              <div className="absolute left-0 top-full pt-2 w-48 transition-all duration-300 ease-in-out opacity-0 invisible -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+                <div className="dark:bg-black/95 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-xl shadow-xl overflow-hidden bg-white/95">
+                  <a href="https://buildrx.org" target="_blank" rel="noopener noreferrer" className="font-sans block px-4 py-2.5 text-[#FFBB00] hover:bg-[#FFBB00]/10 transition-all duration-200 ease-in-out text-sm font-semibold border-b border-gray-100 dark:border-gray-800 last:border-0">BuildRX</a>
+                  <a href="https://lms.acceleratorx.org" target="_blank" rel="noopener noreferrer" className="font-sans block px-4 py-2.5 text-[#FFBB00] hover:bg-[#FFBB00]/10 transition-all duration-200 ease-in-out text-sm font-semibold border-b border-gray-100 dark:border-gray-800 last:border-0">LMS</a>
+                </div>
               </div>
             </div>
+            <div className="flex items-center gap-4 ml-4">
+              <a className="font-sans text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white px-2 py-1.5 text-[14px] font-medium transition-all duration-200 ease-in-out" href="/sign-in">Log In</a>
+              <a className="font-sans h-[36px] px-5 rounded-full border border-gray-900/20 dark:border-white/20 flex items-center gap-2 text-[14px] font-semibold hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black text-gray-900 dark:text-white transition-all group" href="/sign-up">
+                Sign Up
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
           </div>
+          <button className="min-[960px]:hidden text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white p-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-700/50 transition-all duration-200 ease-in-out">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu">
+              <line x1="4" x2="20" y1="12" y2="12"></line>
+              <line x1="4" x2="20" y1="6" y2="6"></line>
+              <line x1="4" x2="20" y1="18" y2="18"></line>
+            </svg>
+          </button>
         </div>
-
       </div>
     </nav>
   );
