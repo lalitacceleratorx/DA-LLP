@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { FileText, MessageSquare, Users, Briefcase } from 'lucide-react';
 
 const LinkedinIcon = () => (
@@ -8,18 +8,39 @@ const LinkedinIcon = () => (
 );
 
 export const MentorshipSection: React.FC = () => {
+  const mentorCount = 5;
+  const [visibleCount, setVisibleCount] = useState(4);
   const [startIndex, setStartIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const startX = useRef(0);
 
-  const handleSliderClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setVisibleCount(1);
+      } else if (window.innerWidth < 1024) {
+        setVisibleCount(2);
+      } else {
+        setVisibleCount(4);
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const maxIndex = Math.max(0, mentorCount - visibleCount);
+  const clamp = (v: number) => Math.max(0, Math.min(maxIndex, v));
+
+  // Progress bar: indicator width = visibleCount/total, left = startIndex/total
+  const barWidthPct = (visibleCount / mentorCount) * 100;
+  const barLeftPct = (startIndex / mentorCount) * 100;
+
+  const handleBarClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
-    if (clickX > rect.width / 2) {
-      setStartIndex(1);
-    } else {
-      setStartIndex(0);
-    }
+    const ratio = (e.clientX - rect.left) / rect.width;    // 0..1
+    const idx = Math.round(ratio * (mentorCount - 1)); // distribute clicks evenly across all 5 possible slide starting positions
+    setStartIndex(clamp(idx));
   };
 
   const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
@@ -31,21 +52,17 @@ export const MentorshipSection: React.FC = () => {
     if (!isDragging) return;
     const currentX = 'changedTouches' in e ? e.changedTouches[0].clientX : (e as React.MouseEvent).clientX;
     const diff = startX.current - currentX;
-
-    if (diff > 50) {
-      setStartIndex(1);
-    } else if (diff < -50) {
-      setStartIndex(0);
-    }
+    if (diff > 50) setStartIndex(clamp(startIndex + 1));
+    if (diff < -50) setStartIndex(clamp(startIndex - 1));
     setIsDragging(false);
   };
 
   const mentorList = [
-    { img: "/new-mentor-1.png", name: "Akash Maurya", role: "Data scientist", company: "Koantek" },
-    { img: "/new-mentor-2.png", name: "Ravi Ahlawat", role: "Sr. Product Manager", company: "PayU" },
-    { img: "/new-mentor-3.png", name: "Subhasis Chandra", role: "Sr. Product Manager", company: "Publicis Sapient" },
-    { img: "/new-mentor-4.png", name: "Nitish Setty", role: "Managing director", company: "GrowSharp" },
-    { img: "/new-mentor-5.png", name: "Sneha Reddy", role: "Software Engineer", company: "Microsoft" }
+    { img: "/new-mentor-1.png", name: "Ravi Ahlawat", role: "Sr. Product Manager", company: "PayU" },
+    { img: "/new-mentor-2.png", name: "Subhasis Chandra", role: "Sr. Product Manager", company: "Publicis Sapient" },
+    { img: "/new-mentor-3.png", name: "Nitish Setty", role: "Managing director", company: "GrowSharp" },
+    { img: "/new-mentor-4.png", name: "Akasha Maurya", role: "Data Scientist", company: "koantek" },
+    { img: "/new-mentor-5.png", name: "Himangi Sharma", role: "Data Scientist", company: "" }
   ];
 
   return (
@@ -310,7 +327,7 @@ export const MentorshipSection: React.FC = () => {
 
         {/* Interactive Mentor Slider */}
         <div className="w-full max-w-[1216px] mx-auto mt-[40px] mb-[40px] px-4 xl:px-0 relative">
-          <div 
+          <div
             className="overflow-hidden w-full cursor-grab active:cursor-grabbing select-none"
             onMouseDown={handleDragStart}
             onMouseUp={handleDragEnd}
@@ -319,13 +336,16 @@ export const MentorshipSection: React.FC = () => {
             onTouchEnd={handleDragEnd}
           >
             <div
-              className="flex gap-[20px] transition-transform duration-500 ease-in-out w-full pointer-events-none"
-              style={{ transform: startIndex === 0 ? 'translateX(0)' : 'translateX(calc(-25% - 5px))' }}
+              className="flex gap-[20px] w-full pointer-events-none"
+              style={{
+                transform: `translateX(calc(-${startIndex * (100 / visibleCount)}% - ${startIndex * (20 / visibleCount)}px))`,
+                transition: 'transform 0.55s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
             >
               {mentorList.map((mentor, i) => (
-                <div 
-                  key={i} 
-                  className="group relative w-[calc((100%-60px)/4)] h-[487px] rounded-[16px] overflow-hidden shrink-0 border border-[#222639] bg-white/[0.02] flex flex-col"
+                <div
+                  key={i}
+                  className="group relative w-full md:w-[calc((100%-20px)/2)] lg:w-[calc((100%-60px)/4)] h-[487px] rounded-[16px] overflow-hidden shrink-0 border border-[#222639] bg-white/[0.02] flex flex-col"
                 >
                   <div className="absolute left-[1px] right-[1px] top-[1px] h-[358.75px] overflow-hidden rounded-t-[15px] pointer-events-none p-2 flex justify-center items-end">
                     <img
@@ -334,11 +354,11 @@ export const MentorshipSection: React.FC = () => {
                       className="max-w-full max-h-full object-contain grayscale transition-transform duration-500 group-hover:scale-[1.02]"
                     />
                   </div>
-                  <div 
+                  <div
                     className="absolute inset-0 pointer-events-none"
                     style={{ background: 'linear-gradient(0deg, #03050F 0%, rgba(5, 8, 22, 0) 50%, rgba(5, 8, 22, 0) 100%)' }}
                   ></div>
-                  
+
                   <div className="absolute left-[21px] right-[21px] bottom-0 flex flex-col pointer-events-none">
                     <span className="font-sans font-normal text-[18px] leading-[24px] tracking-[-0.32px] text-white">
                       {mentor.name}
@@ -346,13 +366,13 @@ export const MentorshipSection: React.FC = () => {
                     <span className="font-dm font-normal text-[14px] leading-[20px] text-white/55 mt-[2px]">
                       {mentor.role}
                     </span>
-                    
+
                     <div className="w-full border-t border-[#222639] mt-[12px] h-[50px] flex justify-between items-center pointer-events-auto">
                       <span className="font-mono font-normal text-[12px] leading-[16px] text-white/65">
                         {mentor.company}
                       </span>
-                      <a 
-                        href="#" 
+                      <a
+                        href="#"
                         className="text-white/40 hover:text-white transition-colors"
                         onClick={(e) => e.stopPropagation()}
                         onMouseDown={(e) => e.stopPropagation()}
@@ -368,14 +388,17 @@ export const MentorshipSection: React.FC = () => {
 
           {/* Slider Progress Bar */}
           <div
-            className="w-full h-[4px] bg-[#FFFFFF] mt-[40px] relative cursor-pointer"
-            onClick={handleSliderClick}
+            className="w-full h-[4px] mt-[40px] relative cursor-pointer rounded-full overflow-hidden"
+            style={{ background: 'rgba(255,255,255,0.12)' }}
+            onClick={handleBarClick}
           >
             <div
-              className="absolute top-0 h-[4px] w-[53.28%] transition-all duration-500 ease-in-out"
+              className="absolute top-0 h-[4px] rounded-full"
               style={{
+                width: `${barWidthPct}%`,
+                left: `${barLeftPct}%`,
                 background: 'linear-gradient(90deg, #0070F3 0%, #5C82AF 100%)',
-                left: startIndex === 0 ? '0%' : '46.72%'
+                transition: 'left 0.55s cubic-bezier(0.4, 0, 0.2, 1)'
               }}
             />
           </div>

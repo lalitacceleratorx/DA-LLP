@@ -84,8 +84,22 @@ const CertificateCard = () => (
 );
 
 export const StackAndOpportunity: React.FC = () => {
-  const row1 = ["SQL", "Python", "Power BI", "ChatGPT", "Tableau", "Excel"];
-  const row2 = ["MySQL", "Pandas", "Looker", "Claude", "Gemini", "Numpy"];
+  const row1 = [
+    { name: "SQL", icon: "/tools/sql.png" },
+    { name: "Python", icon: "/tools/python.png" },
+    { name: "Power BI", icon: "/tools/power-bi.png" },
+    { name: "ChatGPT", icon: "/tools/chatgpt.png" },
+    { name: "Tableau", icon: "/tools/tableau.png" },
+    { name: "Excel", icon: "/tools/excel.png" }
+  ];
+  const row2 = [
+    { name: "MySQL", icon: "/tools/mysql.png" },
+    { name: "Pandas", icon: "/tools/pandas.png" },
+    { name: "Looker", icon: "/tools/looker.png" },
+    { name: "Google Analytics", icon: "/tools/google-analytics.png" },
+    { name: "Gemini", icon: "/tools/gemini.png" },
+    { name: "Numpy", icon: "/tools/numpy.png" }
+  ];
 
   return (
     <div className="bg-brand-bg">
@@ -121,8 +135,9 @@ export const StackAndOpportunity: React.FC = () => {
               transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
             >
               {[...row1, ...row1].map((tool, i) => (
-                <div key={i} className="w-[193px] h-[192px] bg-[rgba(255,255,255,0.02)] border border-[#222639] rounded-[16px] flex items-center justify-center shrink-0 hover:border-white/30 hover:bg-white/[0.04] transition-colors">
-                  <span className="text-[17px] font-normal tracking-[-0.36px] text-white/80 font-sans">{tool}</span>
+                <div key={i} className="w-[193px] h-[192px] bg-[rgba(255,255,255,0.02)] border border-[#222639] rounded-[16px] flex flex-col items-center justify-center gap-6 shrink-0 hover:border-white/30 hover:bg-white/[0.04] transition-colors">
+                  <img src={tool.icon} alt={tool.name} className="w-20 h-20 md:w-24 md:h-24 object-contain filter drop-shadow-lg" />
+                  <span className="text-[17px] font-normal tracking-[-0.36px] text-white/80 font-sans">{tool.name}</span>
                 </div>
               ))}
             </motion.div>
@@ -136,8 +151,9 @@ export const StackAndOpportunity: React.FC = () => {
               transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
             >
               {[...row2, ...row2].map((tool, i) => (
-                <div key={i} className="w-[193px] h-[192px] bg-[rgba(255,255,255,0.02)] border border-[#222639] rounded-[16px] flex items-center justify-center shrink-0 hover:border-white/30 hover:bg-white/[0.04] transition-colors">
-                  <span className="text-[17px] font-normal tracking-[-0.36px] text-white/80 font-sans">{tool}</span>
+                <div key={i} className="w-[193px] h-[192px] bg-[rgba(255,255,255,0.02)] border border-[#222639] rounded-[16px] flex flex-col items-center justify-center gap-6 shrink-0 hover:border-white/30 hover:bg-white/[0.04] transition-colors">
+                  <img src={tool.icon} alt={tool.name} className="w-20 h-20 md:w-24 md:h-24 object-contain filter drop-shadow-lg" />
+                  <span className="text-[17px] font-normal tracking-[-0.36px] text-white/80 font-sans">{tool.name}</span>
                 </div>
               ))}
             </motion.div>
@@ -323,9 +339,9 @@ export const StackAndOpportunity: React.FC = () => {
         </div>
 
         {/* Right Column (AI PM Graph) */}
-        <img
-          src="/AI PM Graph.png"
-          alt="AI PM Graph"
+        <img 
+          src="/AI PM Graph.png" 
+          alt="AI PM Graph" 
           className="absolute left-[608px] top-[115.59px] rounded-[12px] object-cover"
           style={{
             width: '631px',

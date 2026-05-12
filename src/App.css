@@ -12,7 +12,7 @@
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: scroll-logos 30s linear infinite;
+  animation: scroll-logos 15s linear infinite;
   align-items: center;
 }
 

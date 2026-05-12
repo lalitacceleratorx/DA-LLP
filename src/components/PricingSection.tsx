@@ -92,19 +92,19 @@ export const PricingSection: React.FC = () => {
 
           {/* Contents */}
           <div className="absolute top-[40px] left-[40px] h-[28px] font-sans font-normal text-[18.3px] leading-[28px] tracking-[-0.4px] text-white flex items-center">
-            Self-paced
+            Regular Program
           </div>
 
-          <div className="absolute top-[88px] left-[40px] h-[48px] font-sans font-normal text-[46.1px] leading-[48px] tracking-[-0.96px] text-white flex items-center">
-            ₹49,999
+          <div className="absolute top-[88px] left-[40px] h-[48px] font-sans font-normal text-[36px] leading-[48px] tracking-[-0.96px] text-white flex items-center">
+            ₹ 29,999 + GST
           </div>
 
-          <div className="absolute top-[115px] left-[223.55px] h-[20px] font-dm font-normal text-[14px] leading-[20px] text-[rgba(255,255,255,0.4)] flex items-center">
-            incl. taxes
+          <div className="absolute top-[115px] left-[265px] h-[20px] font-dm font-normal text-[12px] leading-[20px] text-[rgba(255,255,255,0.4)] flex items-center">
+            (Flexible EMIs)
           </div>
 
           <div className="absolute top-[140px] left-[40px] h-[18px] font-mono font-normal text-[12px] leading-[18px] text-[#7AA6FF] flex items-center">
-            EMI from ₹4,166/mo
+            FULL PROGRAM ACCESS
           </div>
 
           {/* Button */}
@@ -112,18 +112,18 @@ export const PricingSection: React.FC = () => {
             className="absolute top-[186px] left-[40px] right-[40px] h-[48px] bg-white rounded-[9999px] flex items-center justify-center transition-all active:scale-[0.98]"
           >
             <span className="font-dm font-semibold text-[15px] leading-[22px] text-[#050816] flex items-center justify-center gap-2">
-              Start self-paced <ArrowRight className="w-[16px] h-[16px] stroke-[#050816]" />
+              Enroll in Data Analytics <ArrowRight className="w-[16px] h-[16px] stroke-[#050816]" />
             </span>
           </button>
 
           {/* Features List */}
           <div className="absolute top-[262px] left-[40px] right-[40px] h-[158px] flex flex-col">
             {[
-              "Full curriculum (lifetime access)",
-              "Recorded sessions + AI labs",
-              "Community access",
-              "Capstone project review",
-              "Certificate of completion"
+              "Complete Curriculum",
+              "Hands-on Projects",
+              "Dashboard & SQL Practice",
+              "Tools Access",
+              "Mentorship"
             ].map((feature, i) => (
               <div key={i} className="relative h-[22px] w-full mb-[12px]" style={{ top: `${i * 34}px`, position: 'absolute' }}>
                 <div className="absolute top-[2px] left-0 w-[20px] h-[20px] rounded-full bg-[rgba(0,112,243,0.15)] border border-[rgba(0,112,243,0.3)] flex items-center justify-center">
@@ -156,19 +156,19 @@ export const PricingSection: React.FC = () => {
           {/* Inner Content Container */}
           <div className="absolute inset-0 rounded-[24px] overflow-hidden">
             <div className="absolute top-[40px] left-[40px] h-[28px] font-sans font-normal text-[18.6px] leading-[28px] tracking-[-0.4px] text-white flex items-center">
-              Live Cohort Pro
+              AcceleratorX + IBM
             </div>
 
-            <div className="absolute top-[88px] left-[40px] h-[48px] font-sans font-normal text-[46.5px] leading-[48px] tracking-[-0.96px] text-white flex items-center">
-              ₹89,999
+            <div className="absolute top-[88px] left-[40px] h-[48px] font-sans font-normal text-[36px] leading-[48px] tracking-[-0.96px] text-white flex items-center">
+              ₹ 42,999 + GST
             </div>
 
-            <div className="absolute top-[115px] left-[223.88px] h-[20px] font-dm font-normal text-[14px] leading-[20px] text-[rgba(255,255,255,0.4)] flex items-center">
-              incl. taxes
+            <div className="absolute top-[115px] left-[270px] h-[20px] font-dm font-normal text-[12px] leading-[20px] text-[rgba(255,255,255,0.4)] flex items-center">
+              (Flexible EMIs)
             </div>
 
             <div className="absolute top-[140px] left-[40px] h-[18px] font-mono font-normal text-[12px] leading-[18px] text-[#7AA6FF] flex items-center">
-              No-cost EMI · ₹7,500/mo · 12 mo
+              ADVANCED DATA ANALYTICS TRACK
             </div>
 
             {/* Button */}
@@ -180,19 +180,19 @@ export const PricingSection: React.FC = () => {
               }}
             >
               <span className="font-dm font-semibold text-[15px] leading-[22px] text-white flex items-center justify-center gap-2">
-                Apply for Cohort 17 <ArrowRight className="w-[16px] h-[16px] stroke-white" />
+                Join IBM Program <ArrowRight className="w-[16px] h-[16px] stroke-white" />
               </span>
             </button>
 
             {/* Features List */}
             <div className="absolute top-[262px] left-[40px] right-[40px] h-[192px] flex flex-col">
               {[
-                "Everything in Self-paced",
-                "Live weekend cohort sessions",
-                "1:1 mentor calls (8 sessions)",
-                "Mock interviews + resume reviews",
-                "Hiring partner referrals",
-                "7-day refund window"
+                "Everything included in the Regular Program",
+                "IBM Industry Certification",
+                "Advanced Analytics & Automation Track",
+                "Dashboard & BI Workshops",
+                "Real-world case simulations",
+                "Career Support"
               ].map((feature, i) => (
                 <div key={i} className="relative h-[22px] w-full mb-[12px]" style={{ top: `${i * 34}px`, position: 'absolute' }}>
                   <div className="absolute top-[2px] left-0 w-[20px] h-[20px] rounded-full bg-[rgba(0,112,243,0.15)] border border-[rgba(0,112,243,0.3)] flex items-center justify-center">
