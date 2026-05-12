@@ -10,22 +10,7 @@ export const PricingSection: React.FC = () => {
         className="relative w-full max-w-[1024px] mx-auto mt-[140px] mb-[140px]"
         style={{ height: '740.18px', borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}
       >
-        {/* Mask Group Grid Background */}
-        <div
-          className="absolute pointer-events-none"
-          style={{ left: '236px', right: '233px', top: '0px', bottom: '0px', zIndex: 0 }}
-        >
-          <div
-            className="absolute inset-x-0 top-0 bottom-[0.5px]"
-            style={{
-              background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.05) 1.79%, rgba(255, 255, 255, 0) 1.79%), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1.79%, rgba(255, 255, 255, 0) 1.79%)',
-              backgroundSize: '56px 56px',
-              opacity: 0.5,
-              WebkitMaskImage: 'radial-gradient(80% 60% at 50% 30%, #000000 40%, rgba(0, 0, 0, 0) 80%)',
-              maskImage: 'radial-gradient(80% 60% at 50% 30%, #000000 40%, rgba(0, 0, 0, 0) 80%)'
-            }}
-          />
-        </div>
+
         {/* SVG Label Icon */}
         <div
           className="absolute h-[12px] flex items-center justify-center text-brand-blue"
@@ -259,22 +244,7 @@ export const PricingSection: React.FC = () => {
           style={{ background: 'radial-gradient(70.71% 70.71% at 50% 50%, rgba(0, 112, 243, 0.18) 0%, rgba(0, 112, 243, 0) 60%)' }}
         />
 
-        {/* Mask Group Grid Background */}
-        <div
-          className="absolute pointer-events-none"
-          style={{ left: '236px', right: '233px', top: '0px', bottom: '0px', zIndex: 0 }}
-        >
-          <div
-            className="absolute inset-x-0 top-0 bottom-[0.5px]"
-            style={{
-              background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.05) 1.79%, rgba(255, 255, 255, 0) 1.79%), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1.79%, rgba(255, 255, 255, 0) 1.79%)',
-              backgroundSize: '56px 56px',
-              opacity: 0.5,
-              WebkitMaskImage: 'radial-gradient(80% 60% at 50% 30%, #000000 40%, rgba(0, 0, 0, 0) 80%)',
-              maskImage: 'radial-gradient(80% 60% at 50% 30%, #000000 40%, rgba(0, 0, 0, 0) 80%)'
-            }}
-          />
-        </div>
+
 
         {/* SVG Icon (Quote representation) */}
         <div
@@ -306,15 +276,23 @@ export const PricingSection: React.FC = () => {
 
         {/* Button */}
         <button
-          className="absolute rounded-[9999px] flex items-center justify-center transition-all active:scale-[0.98] z-10 cursor-pointer"
+          className="absolute rounded-[9999px] flex items-center justify-center transition-all active:scale-[0.98] z-10 cursor-pointer px-6 py-3"
           style={{
-            left: '581px', right: '581px', top: '410px', height: '55px',
+            left: '581px',
+            right: '581px',
+            top: '410px',
+            height: '55px',
             background: 'linear-gradient(100.2deg, #0070F3 0%, #7000FF 100%)',
-            boxShadow: '0px 10px 40px -10px rgba(0, 112, 243, 0.7), 0px 0px 60px -10px rgba(112, 0, 255, 0.55), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.08)'
+            boxShadow:
+              '0px 10px 40px -10px rgba(0, 112, 243, 0.7), 0px 0px 60px -10px rgba(112, 0, 255, 0.55), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.08)',
           }}
         >
           <span className="font-dm font-semibold text-[15px] leading-[22px] text-white flex items-center justify-center gap-[12px]">
-            Book Free Career Consultation <ArrowRight className="w-[18px] h-[18px] stroke-white" strokeWidth={1.5} />
+            Book Free Career Consultation
+            <ArrowRight
+              className="w-[18px] h-[18px] stroke-white"
+              strokeWidth={1.5}
+            />
           </span>
         </button>
       </section>

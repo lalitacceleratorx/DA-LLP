@@ -59,7 +59,7 @@ export const Hero: React.FC = () => {
           >
             <span className="font-medium text-[32px] leading-[50px] tracking-[-1.44px]">Become an</span>
             <span
-              className="font-semibold text-[42px] leading-[50px] tracking-[-1.44px] bg-gradient-to-r from-[#0070F3] via-[#5E00FF] to-[#9333EA] bg-clip-text text-transparent pb-2"
+              className="font-semibold text-[42px] leading-[50px] tracking-[-1.44px] bg-gradient-to-r from-white to-[#0070F3] bg-clip-text text-transparent pb-2"
             >
               AI- powered Data Analyst
             </span>
@@ -133,13 +133,13 @@ export const Hero: React.FC = () => {
             </button>
 
             <button
-              className="bg-white/[0.03] border border-white/10 backdrop-blur-[4px] rounded-full transition-all duration-300 hover:bg-white/[0.06] hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center select-none"
+              className="bg-white/[0.03] border border-blue-500 backdrop-blur-[4px] rounded-full transition-all duration-300 hover:bg-white/[0.06] hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center select-none"
               style={{
                 width: '206.02px',
                 height: '56.5px'
               }}
             >
-              <span className="font-dm font-semibold text-[15px] text-white text-center flex items-center leading-[22px]">
+              <span className="font-dm font-semibold text-[15px] text-white text-center flex items-center leading-[22px] whitespace-nowrap">
                 Download Curriculum
               </span>
             </button>
